@@ -1,0 +1,17 @@
+<div class="box">
+    <div class="cadre" style="text-Align:center;"> Notifications </div>
+
+    <div style="display: flex;flex-direction: column;"class="encadre" *ngIf="(messages.type)!=false">
+        <div style="width: 66%;background-color: white; text-align: left;" *ngFor="let note of serv.message  | async ; let i=index" (click)="setUpNote(i)">
+            <div> Notification  provenant de {{note.pseudo}}</div>
+            <hr style="margin-bottom: 5%;">
+            
+        </div> 
+        <div style="background-color: gold;"style="width:35%;margin-left:0%;margin-top:5%;"*ngIf="elt">
+            <div class="cadre"style="margin-top:0;"> Notification {{elt.id}} </div>
+            <div> {{elt.description}}</div>
+            
+           <div> {{elt.Nom | uppercase}} {{elt.date| date:'longDate'}}</div> -->
+        </div>
+    </div>
+</div>

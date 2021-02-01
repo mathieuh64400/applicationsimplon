@@ -1,0 +1,58 @@
+h2,
+p {
+  text-align: center;
+  font-weight: bold;
+ 
+}
+
+.box {
+  background-color: gold;
+  text-align: center;
+  width: 66%;
+  margin-left: 20%;
+  margin-top: 1%;
+  padding-top: 1%;
+  padding-bottom: 2%;
+}
+
+.cadre {
+  font-weight: bold;
+  font-size: x-large;
+  color: black;
+  border: black solid 0.25em;
+  background-color: ivory;
+  width: 95%;
+  
+  margin-left: 2%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  padding-bottom: 3%;
+  padding-top: 3%;
+
+}
+.encadre{
+  font-weight: bold;
+  font-size: x-large;
+  color: black;
+  border: black solid 0.25em;
+ /* background-color: white; */
+  width: 95%;
+  margin-left: 2%;
+  margin-top: 5%;
+  margin-bottom: 0%;
+  padding-bottom: 0%;
+}
+
+
+.rep {
+  display: flex;
+  flex-direction: row;
+  flex: auto;
+  text-align: center;
+}
+
+.rep div p {
+  font-size: 0.9em;
+  margin-left: 5%;
+  margin-bottom: 0%;
+}

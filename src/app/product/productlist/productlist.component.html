@@ -1,0 +1,29 @@
+<h2> Liste des Produits</h2>
+
+<div class="cadre"style="margin-left:10%;font-weight: thin;">
+    <div class="grix xs3" *ngFor="let produit of products | async"> 
+        <div>
+            <img width="85%;" height="75%;" style="margin-top:10%;"
+            [src]="produit.imageUrl">
+        </div>
+        <div style="margin-top:5%;width: 100%;">
+            <!-- <div style="text-align: left; margin-top:5%; font-size: 0.75em;"><span>id:{{produit.id}}</span></div> -->
+            <div style="text-align: left; margin-top:5%; font-size: 0.75em;"><span>Nom:{{produit.name|uppercase}}</span></div>
+            <div style="text-align: left; margin-top:5%; font-size: 0.75em;"><span>category:{{produit.category|uppercase}}</span></div>
+            <div style="text-align: left; margin-top:5%; font-size: 0.75em;"> <span>quantité:{{produit.quantity}}</span></div>
+            <div style="text-align: left; margin-top:5%; font-size: 0.75em;"> <span> date de Modification:{{produit.date|date:'shortDate'|lowercase}}</span></div>
+        </div>
+        <div>
+            <div style="margin-bottom:5%;margin-top: 10%;"
+            *ngIf="(produit.etat)!=true;else elseBlock"
+            > <span>Etat:</span> Rupture de stock </div>
+        </div>
+        <ng-template #elseBlock> <div style="margin-bottom:5%;margin-top: 10%;"><span>Etat:</span> Disponible</div> </ng-template>
+       <button class="btn rounded-1 black press"(click)="DeleteProduct(produit.id)">retirer de la liste</button>
+       <div></div>
+    </div>
+  
+</div>
+<ng-template #elseBlock> <div style="text-align: center; font-size: xx-large;"> Rien en stock</div> </ng-template>
+
+<div style="font-weight: bold; margin-left: 20%;margin-top: 2%;" routerLink=""> Retour  Accueil</div>

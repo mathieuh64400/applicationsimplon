@@ -1,0 +1,38 @@
+h2,
+p {
+  text-align: center;
+  font-weight: bold;
+}
+
+.box {
+  background-color: gold;
+  text-align: center;
+}
+
+.cadre {
+  font-weight: bold;
+  font-size: x-large;
+  color: black;
+  border: black solid 0.25em;
+  background-color: ivory;
+  width: 95%;
+  height: 5em;
+  margin-left: 2%;
+  margin-top: 10%;
+  margin-bottom: 5%;
+
+}
+
+
+.rep {
+  display: flex;
+  flex-direction: row;
+  flex: auto;
+  text-align: center;
+}
+
+.rep div p {
+  font-size: 0.9em;
+  margin-left: 5%;
+  margin-bottom: 0%;
+}

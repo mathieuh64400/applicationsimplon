@@ -1,0 +1,40 @@
+<h2> Validation ccommandes</h2>
+
+<div class="card shadow-1 fx-row" style="margin-left: 5%;margin-right: 5%; border: black solid 1em;">
+    <div class=" d-flex vcenter fx-center px-0"style="color:gold;">
+        <img src="https://www.pourquoidocteur.fr/media/article/thunbs/uploded_stock-image-44631625-m-2015-1509636079.jpg"
+            alt="logo thé">
+    </div>
+    <div class="flex fx-col fx-grow">
+       
+        <div class="card-content">
+            <form style="margin-left: 15%;margin-right:15%;" addcommandes="#ngForm" (ngSubmit)=" validatePost(addcommandes)">
+                
+                <div class="form-field ">
+                    <label for="subject"style="font-weight:bold;">Nom du Commanditaire</label>
+                    <input [(ngModel)]="serv.commandes.name" #cname="ngModel" type="text" id="subject" class="form-control rounded-1"
+                        placeholder="entrez votre nom" />
+                </div>
+                <div class="form-field">
+                    <label class="txt-left" for="select"style="font-weight:bold;">Selection Produit</label>
+                    <input [(ngModel)]="serv.commandes.nameprod" #cnameprod="ngModel" type="text" id="subject" class="form-control rounded-1"
+                        placeholder="entrez votre nom" />
+                  </div>
+            
+            
+                <div class="form-field">
+                    <label for="quantité" style="font-weight:bold;">quantité</label>
+                    <input [(ngModel)]="serv.commandes.quantity" #cquantity="ngModel" type="number" id="name" class="form-control rounded-1" placeholder="quelle quantité prenez-vous" />
+                </div>
+                <div class="form-field">
+                    <label class="txt-left hide-xs" for="date" style="font-weight:bold;">Date de consommation</label>
+                   
+                    <input [(ngModel)]="serv.commandes.date" #cdate="ngModel" type="date" id="date" class="form-control rounded-1" placeholder="" />
+                </div>
+            
+            </form>
+            
+            <button [disabled]=" !addcommandes.valid" routerLink='choix' class="btn rounded-1 black press"style="margin-left:33%;">Valider</button>
+        </div>
+    </div>
+</div>

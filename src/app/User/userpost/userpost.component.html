@@ -1,0 +1,58 @@
+<h2>Profil utilisateur</h2>
+<div *ngIf="msg"> Contact creer avec success</div>
+<div class="cadre" style="margin-left:15%;">
+    <form style="margin-left: 15%;margin-right:15%;"adduserform="#ngForm">
+        <div class="grix xs1 sm2">
+            <div class="form-field ">
+                <label for="subject">Nom </label>
+                <input required [(ngModel)]="serv.users.Nom" #cNom="ngModel" type="text" id="subject" class="form-control rounded-1" placeholder="entrez votre nom" />
+                <div *ngIf=" cNom.invalid">Nom requis</div>
+            </div>
+            <div class="form-field">
+                <label for="name">Prénom</label>
+                <input required [(ngModel)]="serv.users.Prenom" #cPrenom="ngModel" type="text" id="name" class="form-control rounded-1"
+                    placeholder="entrez votre Prénom" />
+                    <div *ngIf=" cPrenom.invalid">Nom requis</div>
+            </div>
+        </div>
+        <div class="grix xs1 sm2">
+            <div class="form-field">
+                <label for="name">Préférences</label>
+                <input required [(ngModel)]="serv.users.preference" #cpreference="ngModel" type="text" id="name" class="form-control rounded-1"
+                    placeholder="entrez vos types de boissons préférés" />
+                    <div *ngIf=" cpreference.invalid">Nom requis</div>
+            </div>
+             <div class="form-field ">
+                <label for="mail">Mail</label>
+                <input required [(ngModel)]="serv.users.email" #cmail="ngModel"type="mail" id="subject" class="form-control rounded-1" placeholder="entrez votre mail" />
+                <div *ngIf=" cmail.invalid">Nom requis</div>
+            </div>
+        </div>
+        <div class="grix xs1 sm2">
+            <div class="form-field">
+                <label for="name">Promotion</label>
+                <input required [(ngModel)]="serv.users.promotion" #cpromotion="ngModel"  type="date" id="name" class="form-control rounded-1"
+                    placeholder="entrez vos types de boissons" />
+                    <div *ngIf=" cpromotion.invalid">Nom requis</div>
+            </div>
+            <div class="form-field">
+                <label for="lieuetude"> lieu d'etude</label>
+                <input required [(ngModel)]="serv.users.lieu" #cLieu="ngModel"  type="text" id="date" class="form-control rounded-1" placeholder="" />
+                <div *ngIf=" cLieu.invalid">Nom requis</div>
+            </div>
+        </div>
+        <div class="grix xs1 sm2">
+            <div class="form-field">
+                <label for="photo"> photo</label>
+                <input type="text" required [(ngModel)]="serv.users.img" #cImage="ngModel" id="date" class="form-control rounded-1" placeholder="" />
+                <div *ngIf=" cImage.invalid">Nom requis</div>
+            </div>
+
+        </div>
+
+    </form>
+    <a href routerLink='/userlist' style="margin-left: 40%;">
+        <button  type="submit" class="btn large shadow-1 black dark-2 press" style="margin-bottom: 5%;">
+            validation</button>
+    </a>
+</div>

@@ -1,0 +1,68 @@
+<h2 style="text-decoration: underline;color:gold;margin-left:40%;"> GESTION DU STOCK</h2>
+<h3 style="text-decoration: underline;color:gold;margin-left:42%;"> Ajout de Produit</h3>
+<!-- <div id="test">{{produitname}}</div> -->
+<!-- <h4> {{produitname}}</h4>
+<input type="text"[(ngModel)]="produitname"> -->
+<form style="margin-left: 15%;margin-right:15%;"addprodform="#ngForm"(ngSubmit)=" validatePost(addprodform)">
+    <div class="grix xs1 sm2">
+        <div class="form-field ">
+            <label for="subject">Nom du produit </label>
+            <input [(ngModel)]="serv.products.name" #cname="ngModel"  type="text" id="subject" class="form-control rounded-1" placeholder="entrez le nom du produit">
+        </div>
+        <div class="form-field ">
+            <label for="subject">Categorie de Produit</label>
+            <input [(ngModel)]="serv.products.category" #ccategory="ngModel"type="text" id="subject" class="form-control rounded-1"
+                placeholder="entrez la categorie du produit" />
+        </div>
+    </div>
+    <div class="grix xs1 sm2">
+        <div class="form-field">
+            <label for="name">Nom de l'utilisateur</label>
+            <input [(ngModel)]="serv.products.NomConsommateur" #cNomConsommateur="ngModel" type="text" id="name" class="form-control rounded-1" placeholder="entrez votre nom" />
+        </div>
+        <div class="form-field">
+            <label class="txt-left hide-xs" for="date">Date (AJOUT/Utilisation)</label>
+          
+            <input [(ngModel)]="serv.products.date" #cdate="ngModel" type="date" id="date" class="form-control rounded-1" placeholder="" />
+        </div>
+
+
+    </div>
+    <div class="grix xs1 sm2">
+        <div class="form-field">
+            <label for="textarea">Remarque</label>
+            <textarea [(ngModel)]="serv.products.description" #cdescription="ngModel" id="textarea" rows="2" class="form-control rounded-1"
+                placeholder="decrivez votre demande"></textarea>
+        </div>
+        <div class="form-field">
+            <label for="textarea">quantité </label>
+            <input [(ngModel)]="serv.products.quantity" #cquantity="ngModel" type="number" id="date" class="form-control rounded-1" placeholder="" />
+        </div>
+    </div>
+    <div class="grix xs1 sm2">
+        <div class="form-field">
+            <div> Type de Modification:</div>
+            <label class="form-check">
+                <input [(ngModel)]="serv.products.modif" #cmodif="ngModel" type="radio" name="yon" />
+                <span>Ajout</span>
+            </label>
+            <label class="form-check">
+                <input [(ngModel)]="serv.products.modif" #cmodif="ngModel" type="radio" name="yon" />
+                <span>Consommation</span>
+            </label>
+        </div>
+        <div class="form-field">
+            <div> Disponibilite:</div>
+            <label class="form-check">
+                <input [(ngModel)]="serv.products.etat" #cetat="ngModel" type="radio" name="yon" />
+                <span>Disponible</span>
+            </label>
+            <label class="form-check">
+                <input   [(ngModel)]="serv.products.etat" #cetat="ngModel" type="radio" name="yon" />
+                <span>Rupture de stock</span>
+            </label>
+        </div>
+
+    </div>
+    <a href routerLink='/productlist' style="margin-left: 40%;"  > <button class="btn shadow-1 rounded-1 black press"[disabled]="addprodform.invalid"> validation</button></a>
+</form>

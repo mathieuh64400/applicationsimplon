@@ -1,0 +1,27 @@
+
+<h2> Liste des commandes</h2>
+
+<div class="cadre"style="margin-left:10%;font-weight: thin;">
+    <div class="grix xs3" *ngFor="let commande of commandes | async"> 
+        <div>
+            <img width="85%;" height="75%;" style="margin-top:10%;"
+            [src]="commande.imageUrl">
+        </div>
+        <div style="margin-top:5%;width: 100%;">
+            <!-- <div style="text-align: left; margin-top:5%; font-size: 0.75em;"><span>id:{{commande.id}}</span></div> -->
+           
+            <div style="text-align: left; margin-top:5%; font-size: 0.75em;"><span>Nom consommateur:{{commande.name|uppercase}}</span></div>
+            <div style="text-align: left; margin-top:5%; font-size: 0.75em;"> <span>quantité:{{commande.quantity}}</span></div>
+            <div style="text-align: left; margin-top:5%; font-size: 0.75em;"> <span> date de Modification:{{commande.date|date:'shortDate'|lowercase}}</span></div>
+            <div style="text-align: left; margin-top:5%; font-size: 0.75em;"> <span> nom produit:{{commande.nameprod|uppercase}}</span></div>
+        </div>
+        
+       
+       <button class="btn rounded-1 black press"(click)="Deletecommandes(commande.id)">retirer de la liste</button>
+       <div></div>
+    </div>
+  
+</div>
+
+
+<div style="font-weight: bold; margin-left: 20%;margin-top: 2%;" routerLink=""> Retour  Accueil</div>
