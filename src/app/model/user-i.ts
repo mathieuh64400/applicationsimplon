@@ -9,6 +9,7 @@ export interface UserI {
     img: string
     motdepass: string
     lieu: string
+    type:boolean
 }
 
 export class Userclass implements UserI {
@@ -23,4 +24,5 @@ export class Userclass implements UserI {
     img: string = ''
     motdepass: string = 'ertffff'
     lieu: string = 'pau'
+    type:boolean=false
 }

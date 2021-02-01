@@ -2,13 +2,13 @@
 <div style="text-align: center;" class="form-field">
     <div>
         <label for="name">Recherche par Nom</label>
-        <input type="text" id="name" class="form-control rounded-1" placeholder="recherche par nom">
+        <input type="text" id="name" class="form-control rounded-1" placeholder="recherche par nom"[(ngModel)]='searchTerm '>
     </div>
     <div> <a routerLink='/adduser'> ajouter un element</a></div>
 </div>
 
 
-<div class="cadre" style="margin-left:15%;display:flex; flex-direction:row;" *ngFor="let user of users  |async">
+<div class="cadre" style="margin-left:15%;display:flex; flex-direction:row;" *ngFor="let user of users |userbyname : searchTerm ">
 
     <img [src]="user.img" alt="logo personne" width="33%;" height="33%;">
     <div class="responsive-table">
@@ -31,7 +31,7 @@
                     
                 <tr>
                     <td class="td">Preference:</td>
-                    <td *ngIf="(user.Preference)!=''; else elseBlock">{{user.preference}}</td>
+                    <td *ngIf="(user.preference)!=''; else elseBlock">{{user.preference}}</td>
                     <ng-template #elseBlock>
                         <td> elements manquants</td>
                     </ng-template>
@@ -45,7 +45,7 @@
                 </tr>
                 <tr>
                     <td class="td"> Promotion</td>
-                    <td *ngIf="(user.promotion)!=''; else elseBlock">{{user.promotion |date:'shortDate'}}</td>
+                    <td *ngIf="(user.promotion)!=null; else elseBlock">{{user.promotion |date:'shortDate'}}</td>
                     <ng-template #elseBlock>
                         <td> elements manquants</td>
                     </ng-template>
@@ -57,7 +57,7 @@
                         <td> elements manquants</td>
                     </ng-template>
                 </tr>
-                <tr  *ngIf="(user.Role)!=false">
+                <tr  *ngIf="(user.role)!=false">
                     <td> <a class="btn rounded-1 black press"routerLink=''>modifier</a></td>
                     <td class="btn rounded-1 black press"(click)="DeleteUser(user.id)"> supprimer </td>
                 </tr>

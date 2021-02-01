@@ -6,14 +6,14 @@ import { Userclass, UserI } from '../model/user-i';
   providedIn: 'root'
 })
 export class UserserviceService {
-
+ users:UserI = new Userclass();
   constructor(private Http:HttpClient) { }
 
   getUser(){
-    return this.Http.get('http://localhost:3000/user')
+    return this.Http.get<UserI[]>('http://localhost:3000/user')
   }
 
-  users:UserI = new Userclass();
+ 
 
   PostUser(){
     console.log(this.users);

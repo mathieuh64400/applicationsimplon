@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
+
 import { Injectable } from '@angular/core';
-import { MessageI } from '../model/message-i';
+import { Message, MessageI } from '../model/message-i';
 
 @Injectable({
   providedIn: 'root'
@@ -10,18 +11,13 @@ export class MessagerieService {
   constructor(public Http:HttpClient) { 
    this.getMessage()
   } 
-  message: Array < MessageI > =[];
+  messages:MessageI = new Message();
+  // message: Array < MessageI > =[];
   getMessage(){
 
-    this.Http.get<Array<MessageI>>('http://localhost:3000/message').subscribe(
-      elt => {
-        console.log("plats recuperes par requêtes", elt)
-
-        this.message = elt;
-
-      }, erreur => console.log(erreur)
-
-    )
+   return this.Http.get<MessageI[]>('http://localhost:3000/message')
+   
+    
   }
   // getMessage(){
   //     return  this.Http.get("http://localhost:3000/message");

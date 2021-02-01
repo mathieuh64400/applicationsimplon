@@ -16,6 +16,8 @@ import { ListCommandeComponent } from './Commande/list-commande/list-commande.co
 import { CommandepostComponent } from './Commande/commandepost/commandepost.component';
 import { AccueilComponent } from './accueil/accueil.component';
 import { MessagegetComponent } from './demande/messageget/messageget.component';
+import { PostdemandeComponent } from './demande/postdemande/postdemande.component';
+import { UserbynamePipe } from './pipes/userbyname.pipe';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +30,9 @@ import { MessagegetComponent } from './demande/messageget/messageget.component';
     ListCommandeComponent,
     CommandepostComponent,
     AccueilComponent,
-    MessagegetComponent
+    MessagegetComponent,
+    PostdemandeComponent,
+    UserbynamePipe
   ],
   imports: [
     BrowserModule,

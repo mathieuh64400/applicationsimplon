@@ -6,25 +6,39 @@ import { Product, Productclass } from '../model/product';
   providedIn: 'root'
 })
 export class ProductserviceService {
-
-  constructor(private Http:HttpClient) { }
-  getProduct(){
-  return  this.Http.get("http://localhost:3000/products");
+  products: Product = new Productclass();
+  constructor(private Http: HttpClient) { 
+    this.PostProduct()
   }
- products:Product = new Productclass();
+  getProduct() {
+    return this.Http.get("http://localhost:3000/products");
+  }
 
-  PostProduct(){
+
+  PostProduct() {
+    const prod = {
+      name :"assiette",
+      category  : "ustensile",
+      description  : "cghzygfyg hjtgyuf yguz",
+      NomConsommateur : "Dalton",
+      imageUrl  : '',
+      quantity  : 10,
+      date : new Date(),
+      etat: true,
+      pseudo: "AE-TR7",
+      modif: true
+    }
     console.log(this.products);
-    this.Http.post('http://localhost:3000/products', this.products).subscribe(
+    this.Http.post('http://localhost:3000/products', prod).subscribe(
       retour => {
         console.log(retour);
       },
       erreur => console.log(erreur)
     );
-  
+
   }
-  Delete(id:Number){
-    const deleteurl='http://localhost:3000/products/'+id
+  Delete(id: Number) {
+    const deleteurl = 'http://localhost:3000/products/' + id
     return this.Http.delete(deleteurl)
   }
 }

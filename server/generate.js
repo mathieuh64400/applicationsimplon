@@ -49,7 +49,7 @@ for (var i = 1; i <= 30; i++) {
     description: faker.lorem.sentences(),
     pseudo: faker.lorem.word(),
     date: faker.date.soon(),
-    type:faker.random.number()
+    type:faker.random.boolean()
 
   });
 }

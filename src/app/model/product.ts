@@ -12,7 +12,7 @@ export interface Product {
     modif: Boolean;
 }
 export class Productclass implements Product {
-    id: Number =1;
+    id: Number =-1;
     name: string ="assiette";
     category: String="ustensile";
     description: string="cghzygfyg hjtgyuf yguz";

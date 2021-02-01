@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
+import { UserI } from 'src/app/model/user-i';
 import { UserserviceService } from 'src/app/services/userservice.service';
 
 @Component({
@@ -13,9 +14,15 @@ export class UserlistComponent implements OnInit {
 
   searchTerm: string = '';
   status: any;
-  users: any;
+  users: UserI[]=[];
   ngOnInit(): void {
-    this.users = this.serv.getUser();
+    // this.users = this.serv.getUser();
+    this.serv.getUser().subscribe(
+      (data)=>{
+        console.log('données recup par requete',data);
+        this.users=data;
+      }
+    )
   }
   DeleteUser(id: number) {
     if (confirm("etes-vous sur de vouloir eliminer cet individu de la liste de membres?")) {

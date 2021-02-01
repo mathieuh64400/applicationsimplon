@@ -12,8 +12,10 @@ export class UserpostComponent implements OnInit {
 
   constructor(public serv: UserserviceService, public toast: ToastrService) { }
   msg:boolean=false
+  
   ngOnInit(): void {
   }
+
   validatePost(adduserform:NgForm){
     console.log("Valeurs récupérées depuis le formualire HTML", adduserform.value);
     this.serv.PostUser();
