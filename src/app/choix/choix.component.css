@@ -1,0 +1,23 @@
+.cadre {
+    font-weight: bold;
+    font-size: x-large;
+    color: black;
+    border: black solid 0.25em;
+    background-color: gold;
+    width: 40%;
+    height: 5em;
+    margin-left: 25%;
+    margin-top: 10%;
+    margin-bottom: 5%;
+    padding-top: 2%;
+    padding-left: 10%;
+  
+  }
+
+h2 {
+    margin-left: 37%;
+    margin-top: 5%;
+    margin-bottom: 1%;
+    color: gold;
+    text-decoration: underline gold;
+  }

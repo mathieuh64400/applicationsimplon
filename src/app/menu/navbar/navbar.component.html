@@ -1,1 +1,14 @@
-<p>navbar works!</p>
+<nav class="navbar shadow-1 black">
+    <div class="navbar-brand">
+        <img routerLinkActive='active' routerLink='/accueil' src="https://simplon.co/storage/2693/logo-simplon_23.png" alt="logo" width="25%;"class="img" >
+    </div>
+    <div class="navbar-menu ml-auto">
+      <a class="navbar-link" routerLinkActive='active'> <span routerLink='/productlist'> Produit</span></a>
+      <a class="navbar-link"  routerLinkActive='active'> <span routerLink='/adduser'> Profil</span></a>
+      <!-- <a class="navbar-link" href="#">Calendrier</a> -->
+      <button (click)="seDeconnecter()">
+        Deconnexion
+      </button>
+      
+    </div>
+  </nav>

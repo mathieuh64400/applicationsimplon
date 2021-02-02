@@ -30,6 +30,7 @@ import { ErrorComponent } from './error/error.component';
 import { IdentificationComponent } from './compte/identification/identification.component';
 import { NavbarComponent } from './menu/navbar/navbar.component';
 import { FooterComponent } from './menu/footer/footer.component';
+import { ChoixComponent } from './choix/choix.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -55,7 +56,8 @@ import { FooterComponent } from './menu/footer/footer.component';
     ErrorComponent,
     IdentificationComponent,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    ChoixComponent
   ],
   imports: [
     BrowserModule,

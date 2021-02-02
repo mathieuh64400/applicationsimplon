@@ -17,6 +17,9 @@ con:boolean=false
       erreur => console.log(erreur)
     );
   }
+  public deconnecter(){
+    localStorage.removeItem('ACCESS_TOKEN');
+  }
   
   // public seConnecter(UserInfo: Utilisateur) {
   //   localStorage.setItem('ACESS_TOKEN','acess_token');

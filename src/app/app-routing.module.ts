@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AccueilComponent } from './accueil/accueil.component';
+import { ChoixComponent } from './choix/choix.component';
 import { CommandepostComponent } from './Commande/commandepost/commandepost.component';
 import { ListCommandeComponent } from './Commande/list-commande/list-commande.component';
 import { IdentificationComponent } from './compte/identification/identification.component';
@@ -23,6 +24,7 @@ const routes: Routes = [
   { path: 'accueil', component: AccueilComponent },
   { path: '', component: PagepresentationComponent },
   {path:'identification',component:IdentificationComponent},
+  {path:'choix',component:ChoixComponent},
   { path: 'login', component: LoginComponent },
   { path: 'userlist', component: UserlistComponent },
   { path: 'adduser', component: UserpostComponent },
