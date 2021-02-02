@@ -47,9 +47,10 @@ for (var i = 1; i <= 30; i++) {
     id: i,
     Nom: faker.lorem.word(),
     description: faker.lorem.sentences(),
-    pseudo: faker.lorem.word(),
+    sujet: faker.lorem.word(),
     date: faker.date.soon(),
-    type:faker.random.boolean()
+    type:faker.lorem.word(),
+    nature:faker.random.boolean()
 
   });
 }

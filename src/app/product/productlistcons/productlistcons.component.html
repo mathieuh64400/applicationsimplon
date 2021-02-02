@@ -1,33 +1,61 @@
 <h2 style="color:gold; margin-left: 45%;"> Nos Produits</h2>
-<p style="margin-left:10%;margin-right:10%;">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolor, illum.
-    Recusandae vitae quasi sequi! Vero fuga at, perferendis laboriosam asperiores ullam repellendus tempore, obcaecati
-    aut, nesciunt labore fugit aliquam voluptas.
-    Modi aut odio voluptas eum labore sit, eaque minima,aborum aliquam. Nam, eius
-    consectetur </p>
+
+
+<div>
+    <label for="name">Recherche par Nom</label>
+    <input type="text" id="name" class="form-control rounded-1" placeholder="recherche par nom"
+        [(ngModel)]=' searchTermproduct '>
+</div>
+
+<!-- <div> <a routerLink='/adduser'> ajouter un element</a></div> -->
+
+
 <!-- realiser apartir de ng for et ng if en bouclant sur une carte en fonction d'un service contenant les infos-->
+
 <div class="grix xs3">
-<div  *ngFor="let prod of products |async">
-    <div class="card shadow-1 " style="background-color:gold;width:75%;margin-left:10%;margin-right:10%;">
+    <div class="card shadow-1 " style="background-color:gold;width:94%;margin-left:2%;margin-right:2%;" *ngFor="let produit of products 
+    | searchbyname : searchTermproduct " >
+
         <div class="card-header">
-            <p class="encadre" style="width:70%;text-align: center ;">{{prod.name|lowercase}}</p>
+            <p class="encadre" style="width:70%;margin-left:17%;margin-top:5% ;">{{produit.name}}</p>
         </div>
-        <div class="card-content">
-            <img [src]="prod.imageUrl" width="100%" height="50%">
-            <div class="encadre">
-                <p style="text-align: left;font-weight: bold;" [ngStyle]="{ color: getcolor()}">
-                    Quantité:{{prod.quantity}}
-                </p>
-                <p style="text-align: left;font-weight: bold;">
-                   Categorie:{{prod.category|uppercase}}
-                </p>
-                <p style="text-align: left;font-weight: bold;">
-                    Informations:{{prod.description}}
-                </p>
-            </div>
+
+        <img [src]='produit.imageUrl' width="100%;" height='35%'>
+
+
+
+
+        <div class="encadre">
+            <p style="text-align: left;font-weight: bold;">
+                Quantité:{{produit.quantity}} {{produit.etat}}
+            </p>
+            <p>
+                Marque/type:{{produit.category}}
+            </p>
+            <p>
+                Informations:
+                {{produit.description}}
+            </p>
         </div>
-        <div class="card-footer">
-            <div class="encadre"> <a href routerLink='/validation'>
-                    Selectionner</a></div>
-        </div>
+        <div *ngIf="produit.etat !=false">
+        <button class="btn rounded-1 black press" style="margin-left:10%; margin-bottom:5%;"> <a routerLink='/Postcommandes'>
+                selectionner </a> </button></div>
+
+
+
     </div>
-</div></div>
+</div>
+
+<!--  <!-- | paginate: { id: 'listing_pagination',
+
+
+        itemsPerPage: 10,
+    
+    
+        currentPage: page,
+    
+    
+        totalItems: totalRecords }" <pagination-controls id="listing_pagination" previousLabel="Prev" nextLabel="Next" maxSize="5" directionLinks="true"
+    (pageChange)="page = $event">
+
+</pagination-controls> -->

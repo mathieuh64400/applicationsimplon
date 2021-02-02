@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { UserlistComponent } from './User/userlist/userlist.component';
 import { UserpostComponent } from './User/userpost/userpost.component';
 import { UserputComponent } from './User/userput/userput.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ProductlistComponent } from './product/productlist/productlist.component';
 import { ProductlistconsComponent } from './product/productlistcons/productlistcons.component';
@@ -18,6 +18,18 @@ import { AccueilComponent } from './accueil/accueil.component';
 import { MessagegetComponent } from './demande/messageget/messageget.component';
 import { PostdemandeComponent } from './demande/postdemande/postdemande.component';
 import { UserbynamePipe } from './pipes/userbyname.pipe';
+import { MessagebytypePipe } from './pipes/messagebytype.pipe';
+import { ProductbynamePipe } from './pipes/productbyname.pipe';
+import { ProductbycategoriePipe } from './pipes/productbycategorie.pipe';
+import { SearchbynamePipe } from './pipes/searchbyname.pipe';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { PagepresentationComponent } from './pagepresentation/pagepresentation.component';
+import { LoginComponent } from './compte/login/login.component';
+import { WelcomeComponent } from './welcome/welcome.component';
+import { ErrorComponent } from './error/error.component';
+import { IdentificationComponent } from './compte/identification/identification.component';
+import { NavbarComponent } from './menu/navbar/navbar.component';
+import { FooterComponent } from './menu/footer/footer.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,12 +44,28 @@ import { UserbynamePipe } from './pipes/userbyname.pipe';
     AccueilComponent,
     MessagegetComponent,
     PostdemandeComponent,
-    UserbynamePipe
+    UserbynamePipe,
+    MessagebytypePipe,
+    ProductbynamePipe,
+    ProductbycategoriePipe,
+    SearchbynamePipe,
+    PagepresentationComponent,
+    LoginComponent,
+    WelcomeComponent,
+    ErrorComponent,
+    IdentificationComponent,
+    NavbarComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,HttpClientModule,FormsModule,FormsModule,BrowserAnimationsModule,
+    AppRoutingModule,HttpClientModule,
+    FormsModule,
+    FormsModule,
+    BrowserAnimationsModule,
+    NgxPaginationModule,
     ToastrModule.forRoot(),
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

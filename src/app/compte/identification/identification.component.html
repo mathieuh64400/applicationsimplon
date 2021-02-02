@@ -1,0 +1,31 @@
+<body>
+
+  <main>
+    <div style="text-align: center;">
+      <h1> {{data.titre}}</h1>
+      <h2>{{data.message}}</h2></div>
+    <form  style="margin-left: 5%;margin-right:5%;"*ngIf="!auth.con">
+
+      <div class="form-field ">
+          <label for="mail"> email </label>
+          <input type="email" id="email" class="form-control rounded-1"
+              placeholder="entrez votre email" [(ngModel)]="ut.email" (input)="montre()"/>
+      </div>
+      <div *ngIf="">email
+          requis</div>
+      <div class="form-field ">
+          <label for="mail"> mot de passe </label>
+          <input type="password" id="password"
+              class="form-control rounded-1" placeholder="entrez votre mot de passe" [(ngModel)]="ut.password" (input)="montre()"/>
+      </div>
+      <div>
+        <button (click)="validationUtilisateur()">Connexion</button>
+      </div>
+
+
+  </form>
+
+
+
+  </main>
+</body>

@@ -6,8 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./postdemande.component.css']
 })
 export class PostdemandeComponent implements OnInit {
-
-  constructor() { }
+  demande:any;
+  constructor() {
+    this.demande={
+      titre:"demande"
+     }
+   }
 
   ngOnInit(): void {
   }

@@ -11,7 +11,7 @@ export class ProductserviceService {
     this.PostProduct()
   }
   getProduct() {
-    return this.Http.get("http://localhost:3000/products");
+    return this.Http.get<Product[]>("http://localhost:3000/products");
   }
 
 

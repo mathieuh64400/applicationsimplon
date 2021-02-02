@@ -4,7 +4,7 @@ export interface MessageI {
     description: string;
     pseudo: string;
     date: Date;
-    type:boolean;
+    type:string;
 
 }
 export class Message implements MessageI {
@@ -13,5 +13,5 @@ export class Message implements MessageI {
     description: string="hhhhh";
     pseudo: string="hfhhdh";
     date: Date= new Date();
-    type:boolean=true;
+    type:string="ahahah";
 }

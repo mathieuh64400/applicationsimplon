@@ -1,0 +1,19 @@
+.cadre {
+    font-weight: bold;
+    font-size: x-large;
+    color: black;
+    border: black solid 0.25em;
+    background-color: white;
+    width: 50%;
+    height: 20em;
+    margin-left: 25%;
+    margin-top: 10%;
+    margin-bottom: 5%;
+  
+  }
+  form{
+      margin: 3.5%;
+  }
+  button{
+      margin-left: 35%;
+  }
