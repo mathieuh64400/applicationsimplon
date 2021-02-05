@@ -5,15 +5,15 @@
        
             
             <div>
-                <label for="name">Recherche par type</label>
-                <input type="text" id="name" class="form-control rounded-1" placeholder="recherche par type"
+                <label for="name">Recherche par Nom</label>
+                <input type="text" id="name" class="form-control rounded-1" placeholder="recherche par Nom"
                     [(ngModel)]='searchTermtype '>
             </div>
         
   
     <div style="display: flex;flex-direction: column;" class="encadre">
         <div style="width:100%;background-color: white; text-align: left;" *ngFor="let note of messages  |messagebytype : searchTermtype  ; ">
-            <div style="text-align: center;"> Notification provenant de {{note.Nom}}</div>
+            <div style="text-align: center;font-weight: thin;"> Notification provenant de {{note.Nom}}</div>
             <div style="text-align: center;">........</div>
             <div> {{note.description}}</div>
             <div style="text-align: center;">........</div>

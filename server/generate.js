@@ -16,7 +16,7 @@ for (var i = 1; i <= 30; i++) {
     role: faker.random.boolean(),
     promotion: faker.date.recent(),
     email: faker.internet.email(),
-    img: faker.image.avatar(),
+    img: faker.image.people(),
     motdepass: faker.internet.password(),
     lieu:faker.address.city()
   })

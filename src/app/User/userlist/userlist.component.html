@@ -13,7 +13,7 @@
 <div class="cadre" style="margin-left:15%;display:flex; flex-direction:row;"
     *ngFor="let user of users |userbyname : searchTerm ">
 
-    <img [src]="user.img" alt="logo personne" width="33%;" height="33%;">
+    <img [src]="user.img" alt="logo personne" width="33%;" height="66%;">
     <div class="responsive-table">
         <table class="table border-0">
 
@@ -60,7 +60,7 @@
                         <td> elements manquants</td>
                     </ng-template>
                 </tr>
-                <tr *ngIf="(user.role)!=false">
+                <tr>
                     <td> <a class="btn rounded-1 black press" routerLink=''>modifier</a></td>
                     <td class="btn rounded-1 black press" (click)="DeleteUser(user.id)"> supprimer </td>
                 </tr>
@@ -69,7 +69,7 @@
     </div>
 </div>
 
-<a href routerLink="" style="margin-left: 25%;">
+<a href routerLink="/accueil" style="margin-left: 25%;">
     <button type="submit" class="btn large shadow-1 black dark-2 press" style="margin-top: 1%;">
         Accueil</button></a>
 <app-footer></app-footer>

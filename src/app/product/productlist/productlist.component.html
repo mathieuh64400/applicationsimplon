@@ -1,7 +1,7 @@
 <app-navbar></app-navbar>
 <h2> Liste des Produits</h2>
 
-<div class="cadre"style="margin-left:10%;font-weight: thin;">
+<div class="cadre"style="margin-left:10%;font-weight: thin;overflow: scroll;">
     <div class="grix xs3" *ngFor="let produit of products | async"> 
         <div>
             <img width="85%;" height="75%;" style="margin-top:10%;"
@@ -27,5 +27,5 @@
 </div>
 <ng-template #elseBlock> <div style="text-align: center; font-size: xx-large;"> Rien en stock</div> </ng-template>
 
-<div style="font-weight: bold; margin-left: 20%;margin-top: 2%;" routerLink=""> Retour  Accueil</div>
+<div style="font-weight: bold; margin-left: 20%;margin-top: 2%;" routerLink="/accueil"> Retour  Accueil</div>
 <app-footer></app-footer>

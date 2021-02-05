@@ -1,8 +1,8 @@
 <app-navbar></app-navbar>
 <h2> Liste des commandes</h2>
 
-<div class="cadre"style="margin-left:10%;font-weight: thin;">
-    <div class="grix xs3" *ngFor="let commande of commandes | async"> 
+<div class="cadre"style="margin-left:10%;font-weight: thin;"style="overflow: scroll;">
+    <div class="grix xs3" *ngFor="let commande of commandes | async" > 
         <div>
             <img width="85%;" height="75%;" style="margin-top:10%;"
             [src]="commande.imageUrl">
