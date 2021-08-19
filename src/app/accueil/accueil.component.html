@@ -20,17 +20,18 @@
         <div class="cadre" style="text-Align:left;margin-bottom: 3%; padding-top: 2%;"> Notifications <i
                 class="fas fa-search" style="margin-left:70%;" routerLink="/demande"></i></div>
         <div class="cadre" style="overflow-y: scroll;">
-            <div *ngFor="let data of dataserv.donnee | slice:1:5"style="margin-top:1%;">
+            <div *ngFor="let data of dataserv.donnee | slice:1:5">
                 <div class="rep">
 
                     <div class="rep" style="margin-top:2%;">
                         <p style="font-size: large;">{{data.Category}}:</p>
                         <p>{{data.Description}}</p>
                     </div>
-                    <div class="rep" style="margin-left:15%;">
-                        <p style="margin-right: 2%;">{{data.Nom | uppercase}}</p>
-                        <p>{{data.Date}} </p>
-                    </div>
+                     <div class="rep" style="margin-left:15%;">
+                     <p style="margin-right: 2%;">{{data.Nom | uppercase}}</p>
+                        
+                    </div> 
+                  
 
                 </div>
                 <div>-----------------------------------------------</div>

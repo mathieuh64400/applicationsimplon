@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { MessagerieService } from 'src/app/services/messagerie.service';
 
 @Component({
   selector: 'app-postdemande',
@@ -7,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PostdemandeComponent implements OnInit {
   demande:any;
-  constructor() {
+  constructor(public serv:MessagerieService) {
     this.demande={
       titre:"demande"
      }
@@ -15,5 +17,8 @@ export class PostdemandeComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  creationMessage(cForm:NgForm){
+    console.log("Valeurs récupérées depuis le formualire HTML", cForm.value);
+    this.serv.messageCreate();
+  }
 }

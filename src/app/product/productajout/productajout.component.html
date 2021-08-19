@@ -4,7 +4,54 @@
 <!-- <div id="test">{{produitname}}</div> -->
 <!-- <h4> {{produitname}}</h4>
 <input type="text"[(ngModel)]="produitname"> -->
-<form style="margin-left: 15%;margin-right:15%;"addprodform="#ngForm"(ngSubmit)=" validatePost(addprodform)">
+<form #cForm="ngForm" (ngSubmit)="creationproduit(cForm)"style="margin-left: 15%;margin-right:15%;">
+    <div class="grix xs1 sm2">
+        <div class="form-field">
+            <label for="nom"> Entrez le nom du produit</label>
+            <input name="Name" type="text" required [(ngModel)]="serv.products.name" #cName="ngModel">
+        </div>
+        <div class="form-field">
+            <label for="nom"> Entrez le nom du consommateur:</label>
+            <input name="NomduConsommmateur" type="text" required [(ngModel)]="serv.products.NomConsommateur" #cNomConsommateur="ngModel">
+        </div>
+    </div>
+    <div class="grix xs1 sm2">
+        <div class="form-field">
+            <label for="preference"> Decrivez en quelques mot le produit:</label>
+            <input name="description" type="text" required [(ngModel)]="serv.products.description"
+                #cDescription="ngModel">
+        </div>
+    </div>
+        <div class="grix xs1 sm2">
+            <div class="form-field">
+                <label for="preference"> Entrez votre code image:</label>
+                <input name="cImageUrl" type="text" [(ngModel)]="serv.products.imageUrl" #cImageUrl="ngModel">
+            </div>
+            <div class="form-field">
+                <label for="mail"> Entrez la quantité de produit:</label>
+                <input name="Email" type="number" [(ngModel)]="serv.products.quantity" #cQuantity="ngModel">
+            </div>
+        </div>
+        <div class="grix xs1 sm2">
+            <div class="form-field">
+                <label for="image">entrez la date d'ajout</label>
+                <input name="Date" type="date" [(ngModel)]="serv.products.date" #cDate="ngModel"></div>
+            <div class="form-field">
+                <label for="pseudo">entrez le pseudo du produit </label>
+                <input name="pseudo" [(ngModel)]="serv.products.pseudo" #cPseudo="ngModel">
+            </div>
+        </div>
+       
+        <div>
+                <!-- <button (click)="contactServ.envoieContact()" [disabled]="cForm.invalid">SE CONNECTER</button> -->
+                <button [disabled]="cForm.invalid"routerLink='/productlist'>Ajouter</button>
+                <!-- <button type="reset">ANNULER</button> -->
+        </div>
+       
+</form>
+
+
+<!-- <form style="margin-left: 15%;margin-right:15%;"addprodform="#ngForm"(ngSubmit)=" validatePost(addprodform)">
     <div class="grix xs1 sm2">
         <div class="form-field ">
             <label for="subject">Nom du produit </label>
@@ -26,8 +73,6 @@
           
             <input [(ngModel)]="serv.products.date" #cdate="ngModel" type="date" id="date" class="form-control rounded-1" placeholder="" />
         </div>
-
-
     </div>
     <div class="grix xs1 sm2">
         <div class="form-field">
@@ -66,5 +111,5 @@
 
     </div>
     <a href routerLink='/productlist' style="margin-left: 40%;"  > <button class="btn shadow-1 rounded-1 black press"[disabled]="addprodform.invalid"> validation</button></a>
-</form>
+</form> -->
 <app-footer></app-footer>

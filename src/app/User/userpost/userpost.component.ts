@@ -16,9 +16,13 @@ export class UserpostComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  validatePost(adduserform:NgForm){
-    console.log("Valeurs récupérées depuis le formualire HTML", adduserform.value);
-    this.serv.PostUser();
-    this.toast.success('ajout realisé');
+  // validatePost(adduserform:NgForm){
+  //   console.log("Valeurs récupérées depuis le formualire HTML", adduserform.value);
+  //   this.serv.PostUser();
+  //   this.toast.success('ajout realisé');
+  // }
+  creationEtat(cForm:NgForm){
+    console.log("Valeurs récupérées depuis le formualire HTML", cForm.value);
+    this.serv.userCreate();
   }
 }

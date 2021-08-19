@@ -6,29 +6,28 @@ import { Userclass, UserI } from '../model/user-i';
   providedIn: 'root'
 })
 export class UserserviceService {
- users:UserI = new Userclass();
-  constructor(private Http:HttpClient) { }
+ usersi:UserI = new Userclass();
+  constructor(private http:HttpClient) { }
 
   getUser(){
-    return this.Http.get<UserI[]>('http://localhost:3000/user')
+    return this.http.get<UserI[]>('http://localhost:3000/user')
   }
 
  
 
-  PostUser(){
-    console.log(this.users);
-    this.Http.post('http://localhost:3000/user', this.users).subscribe(
+  userCreate(){
+    console.log(this.usersi);
+    this.http.post('http://localhost:3000/user', this.usersi).subscribe(
       retour => {
         console.log(retour);
       },
       erreur => console.log(erreur)
     );
-  
   }
   
   Delete(id:Number){
     const deleteurl='http://localhost:3000/user/'+id
-    return this.Http.delete(deleteurl)
+    return this.http.delete(deleteurl)
   }
 
 }

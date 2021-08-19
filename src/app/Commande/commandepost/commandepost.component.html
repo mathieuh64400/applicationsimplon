@@ -1,15 +1,51 @@
 <app-navbar></app-navbar>
-<h2> Validation ccommandes</h2>
+<h2> Validation commandes</h2>
 
 <div class="card shadow-1 fx-row" style="margin-left: 5%;margin-right: 5%; border: black solid 1em;">
-    <div class=" d-flex vcenter fx-center px-0"style="color:gold;">
+    <div class=" d-flex vcenter fx-center px-0" style="color:gold;">
         <img src="https://www.pourquoidocteur.fr/media/article/thunbs/uploded_stock-image-44631625-m-2015-1509636079.jpg"
             alt="logo thé">
     </div>
     <div class="flex fx-col fx-grow">
-       
+
         <div class="card-content">
-            <form style="margin-left: 15%;margin-right:15%;" addcommandes="#ngForm" (ngSubmit)=" validatePost(addcommandes)">
+            <form #cForm="ngForm" (ngSubmit)="commandeProduct(cForm)" style="margin-left: 15%;margin-right:15%;">
+
+                <div class="form-field">
+                    <label for="nom"> Entrez le nom du commanditaire</label>
+                    <input name="name" type="text" required [(ngModel)]="serv.commandesi.name" #cName="ngModel">
+                </div>
+                <div class="form-field">
+                    <label for="nom"> Entrez le nom du produit commandé:</label>
+                    <input name="nameprod" type="text" required [(ngModel)]="serv.commandesi.nameprod"
+                        #cNameprod="ngModel">
+                </div>
+
+
+                <!-- <div class="form-field">
+                    <label for="imageUrl"> entrez l'image du produit</label>
+                    <input name="imageUrl" type="text" required [(ngModel)]="serv.commandesi.imageUrl"
+                        #cimageUrl="ngModel">
+                </div> -->
+
+
+                <div class="form-field">
+                    <label for="quantity"> Entrez la quantité du produit</label>
+                    <input name="quantity" type="number" [(ngModel)]="serv.commandesi.quantity" #cQuantity="ngModel">
+                </div>
+                <div class="form-field">
+                    <label for="quantity"> Entrez la date de commande</label>
+                    <input name="date" type="date" [(ngModel)]="serv.commandesi.date" #cDate="ngModel">
+                </div>
+
+                <div>
+                    <!-- <button (click)="contactServ.envoieContact()" [disabled]="cForm.invalid">SE CONNECTER</button> -->
+                    <button [disabled]="cForm.invalid" routerLink='/choix'>Valider</button>
+                    <!-- <button type="reset">ANNULER</button> -->
+                </div>
+
+            </form>
+            <!-- <form style="margin-left: 15%;margin-right:15%;" addcommandes="#ngForm" (ngSubmit)=" validatePost(addcommandes)">
                 
                 <div class="form-field ">
                     <label for="subject"style="font-weight:bold;">Nom du Commanditaire</label>
@@ -35,7 +71,7 @@
             
             </form>
             
-            <button [disabled]=" !addcommandes.valid" routerLink='/choix' class="btn rounded-1 black press"style="margin-left:33%;">Valider</button>
+            <button [disabled]=" !addcommandes.valid" routerLink='/choix' class="btn rounded-1 black press"style="margin-left:33%;">Valider</button> -->
         </div>
     </div>
 </div>

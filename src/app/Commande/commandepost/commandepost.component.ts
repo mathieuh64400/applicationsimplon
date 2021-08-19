@@ -9,14 +9,13 @@ import { CommandeserviceService } from 'src/app/services/commandeservice.service
   styleUrls: ['./commandepost.component.css']
 })
 export class CommandepostComponent implements OnInit {
-  addcommandes:any='';
+ 
   constructor( public serv:CommandeserviceService,public toast: ToastrService) { }
 
   ngOnInit(): void {
   }
-  validatePost(addcommande:NgForm){
-    console.log("Valeurs récupérées depuis le formualire HTML", addcommande.value);
-    this.serv.PostCommande();
-    this.toast.success('ajout realisé');
+  commandeProduct(cForm:NgForm){
+    console.log("Valeurs récupérées depuis le formualire HTML", cForm.value);
+    this.serv.postCommande();
   }
 }

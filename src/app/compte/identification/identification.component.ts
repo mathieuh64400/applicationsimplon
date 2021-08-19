@@ -10,17 +10,20 @@ import { AuthentificationService } from 'src/app/services/authentification.servi
   styleUrls: ['./identification.component.css']
 })
 export class IdentificationComponent implements OnInit {
-  
-    constructor(public auth:AuthentificationService,private router:Router) {
-      this.data={
-        titre:"Simplon's Drink",
-        
-        message:"Buvons Bien ensemble"} }
     data:any;
     ut:Utilisateur={
     email:'joedoe@neuf.fr',
     password:"007Bond"
-  }
+    }
+    
+    constructor(public auth:AuthentificationService,private router:Router) {
+      this.data={
+        titre:"Simplon's Drink",
+        
+        message:"Buvons Bien ensemble"} 
+      
+      }
+  
     ngOnInit(): void {
       
     }

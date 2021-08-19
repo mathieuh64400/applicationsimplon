@@ -31,6 +31,15 @@ import { IdentificationComponent } from './compte/identification/identification.
 import { NavbarComponent } from './menu/navbar/navbar.component';
 import { FooterComponent } from './menu/footer/footer.component';
 import { ChoixComponent } from './choix/choix.component';
+import { FullcalandarComponent } from './fullcalandar/fullcalandar.component';
+import { FullCalendarModule } from '@fullcalendar/angular'; // must go before plugins
+import dayGridPlugin from '@fullcalendar/daygrid'; // a plugin!
+import interactionPlugin from '@fullcalendar/interaction'; // a plugin!
+
+FullCalendarModule.registerPlugins([ // register FullCalendar plugins
+  dayGridPlugin,
+  interactionPlugin
+]);
 @NgModule({
   declarations: [
     AppComponent,
@@ -57,17 +66,19 @@ import { ChoixComponent } from './choix/choix.component';
     IdentificationComponent,
     NavbarComponent,
     FooterComponent,
-    ChoixComponent
+    ChoixComponent,
+    FullcalandarComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,HttpClientModule,
     FormsModule,
-    FormsModule,
+    
     BrowserAnimationsModule,
     NgxPaginationModule,
     ToastrModule.forRoot(),
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FullCalendarModule, 
   ],
   providers: [],
   bootstrap: [AppComponent]

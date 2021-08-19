@@ -2,7 +2,45 @@
 <section>
     <h2 style="color:black; text-align: center;text-decoration: underline;"> {{demande.titre | uppercase}}</h2>
     <div class="cadre">
-        <form>
+        <form #cForm="ngForm" (ngSubmit)="creationMessage(cForm)" >
+
+            <div class="form-field">
+                <label for="nom"> Entrez votre Nom</label>
+                <input name="name" type="text" required [(ngModel)]="serv.messages.Nom" #cNom="ngModel">
+            </div>
+            <div class="form-field">
+                <label for="pseudo"> Entrez votre pseudo:</label>
+                <input name="nameprod" type="text" required [(ngModel)]="serv.messages.pseudo"
+                    #cPseudo="ngModel">
+            </div>
+
+
+             <div class="form-field">
+                <label for="date"> entrez la date d'envoie du message:</label>
+                <input name="date" type="date" required [(ngModel)]="serv.messages.date"
+                    #cDate="ngModel">
+            </div>
+
+
+            <div class="form-field">
+                <label for="type"> Entrez le sujet du message (Categorie: Produit, Modifictaion, Autre)</label>
+                <input name="type" type="text" [(ngModel)]="serv.messages.type" #cType="ngModel">
+            </div>
+            <div class="form-field">
+                <label for="textarea">Description</label>
+                <textarea id="textarea" rows="2" class="form-control rounded-1"
+                    placeholder="decrivez votre demande" name="desciption"[(ngModel)]="serv.messages.description"#cDescription="ngModel"></textarea>
+              
+            </div>
+
+            <div>
+                <!-- <button (click)="contactServ.envoieContact()" [disabled]="cForm.invalid">SE CONNECTER</button> -->
+                <button [disabled]="cForm.invalid" routerLink="/accueil">Envoyer</button>
+                <!-- <button type="reset">ANNULER</button> -->
+            </div>
+
+        </form>
+        <!-- <form>
             <div class="form-field col-sm2">
                 <label for="subject">Sujet</label>
                 <input type="text" id="subject" class="form-control rounded-1"
@@ -42,10 +80,10 @@
                     <span>J'ACCEPTE QUE MES DONNÉES SOIENT STOCKÉES SELON LES NORMES RGPD</span>
                 </label>
             </div>
-        </form>
-        <a href routerLink="/accueil" >
+        </form> -->
+        <!-- <a href routerLink="/accueil" >
         <button type="submit" class="btn large shadow-1 black dark-2 press"> validation</button></a>
-    </div>
+    --></div> 
 
 </section> 
 <app-footer></app-footer>

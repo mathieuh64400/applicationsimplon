@@ -1,6 +1,7 @@
 {
   "name": "application-simplonversionfin",
   "version": "0.0.0",
+  "main": "main.js",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -8,6 +9,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
+    "start:electron": "ng build --base-href ./ && electron .",
     "generate": "node ./server/generate.js > ./server/database.json",
     "server": "json-server --watch ./server/database.json"
   },
@@ -23,7 +25,12 @@
     "@angular/platform-browser": "~11.1.0",
     "@angular/platform-browser-dynamic": "~11.1.0",
     "@angular/router": "~11.1.0",
-    "faker": "^5.2.0",
+    "@fullcalendar/angular": "^5.9.0",
+    "@fullcalendar/core": "^5.9.0",
+    "@fullcalendar/daygrid": "^5.9.0",
+    "@fullcalendar/interaction": "^5.9.0",
+    "faker": "^5.4.0",
+    "fullcalendar-interaction": "^5.3.3",
     "json-server": "^0.16.3",
     "ngx-pagination": "^5.0.0",
     "ngx-toastr": "^13.2.0",
@@ -38,6 +45,7 @@
     "@types/jasmine": "~3.6.0",
     "@types/node": "^12.11.1",
     "codelyzer": "^6.0.0",
+    "electron": "^13.2.1",
     "jasmine-core": "~3.6.0",
     "jasmine-spec-reporter": "~5.0.0",
     "karma": "~5.2.0",

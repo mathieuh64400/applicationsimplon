@@ -6,8 +6,10 @@ import { Commandeclass, CommandeI } from '../model/commande-i';
   providedIn: 'root'
 })
 export class CommandeserviceService {
+  commandesi:CommandeI = new Commandeclass();
 
   constructor(private chttp:HttpClient) { }
+  
   getCommande(){
     return this.chttp.get("http://localhost:3000/commande");
   }
@@ -15,10 +17,12 @@ export class CommandeserviceService {
     const deleteurl='http://localhost:3000/commande/'+id
     return this.chttp.delete(deleteurl)
   }
-  commandes:CommandeI = new Commandeclass();
-  PostCommande(){
-    console.log(this.commandes);
-    this.chttp.post('http://localhost:3000/products', this.commandes).subscribe(
+
+  
+  
+  postCommande(){
+    console.log(this.commandesi);
+    this.chttp.post('http://localhost:3000/commande', this.commandesi).subscribe(
       retour => {
         console.log(retour);
       },

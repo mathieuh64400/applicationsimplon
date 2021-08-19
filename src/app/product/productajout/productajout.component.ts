@@ -14,10 +14,14 @@ export class ProductajoutComponent implements OnInit {
   addprodform:any='';
   ngOnInit(): void {
   }
-  validatePost(addprodform:NgForm){
-    console.log("Valeurs récupérées depuis le formualire HTML", addprodform.value);
-    this.serv.PostProduct();
-    this.toast.success('ajout realisé');
+  // validatePost(addprodform:NgForm){
+  //   console.log("Valeurs récupérées depuis le formualire HTML", addprodform.value);
+  //   this.serv.PostProduct();
+  //   this.toast.success('ajout realisé');
+  // }
+  creationproduit(cForm:NgForm){
+    console.log("Valeurs récupérées depuis le formualire HTML", cForm.value);
+    this.serv.productcreate();
   }
 
 }

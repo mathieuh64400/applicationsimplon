@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { FullCalendarComponent } from '@fullcalendar/angular';
 import { AccueilComponent } from './accueil/accueil.component';
 import { ChoixComponent } from './choix/choix.component';
 import { CommandepostComponent } from './Commande/commandepost/commandepost.component';
@@ -38,6 +39,7 @@ const routes: Routes = [
   {path:'postdemande',component:PostdemandeComponent},
   { path: 'welcome', component: WelcomeComponent, canActivate: [AuthentificationGuard] },
   { path: 'not-found', component: ErrorComponent },
+  {path:'fullcalendar',component:FullCalendarComponent},
   { path: '**', redirectTo: 'not-found' }
 ];
 

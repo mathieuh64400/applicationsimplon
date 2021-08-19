@@ -7,35 +7,24 @@ import { Product, Productclass } from '../model/product';
 })
 export class ProductserviceService {
   products: Product = new Productclass();
+
+  
   constructor(private Http: HttpClient) { 
-    this.PostProduct()
+    this.productcreate();
   }
   getProduct() {
     return this.Http.get<Product[]>("http://localhost:3000/products");
   }
 
 
-  PostProduct() {
-    const prod = {
-      name :"assiette",
-      category  : "ustensile",
-      description  : "cghzygfyg hjtgyuf yguz",
-      NomConsommateur : "Dalton",
-      imageUrl  : '',
-      quantity  : 10,
-      date : new Date(),
-      etat: true,
-      pseudo: "AE-TR7",
-      modif: true
-    }
+  productcreate(){
     console.log(this.products);
-    this.Http.post('http://localhost:3000/products', prod).subscribe(
+    this.Http.post('http://localhost:3000/products', this.products).subscribe(
       retour => {
         console.log(retour);
       },
       erreur => console.log(erreur)
     );
-
   }
   Delete(id: Number) {
     const deleteurl = 'http://localhost:3000/products/' + id

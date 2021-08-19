@@ -1,5 +1,5 @@
 export interface Product {
-    id: Number;
+    // id: Number;
     name: string;
     category: String;
     description: string;
@@ -7,20 +7,20 @@ export interface Product {
     imageUrl: string;
     quantity: Number;
     date: Date;
-    etat: Boolean;
+    etat?: Boolean;
     pseudo:string;
-    modif: Boolean;
+    modif?: Boolean;
 }
 export class Productclass implements Product {
-    id: Number =-1;
-    name: string ="assiette";
-    category: String="ustensile";
-    description: string="cghzygfyg hjtgyuf yguz";
-    NomConsommateur: string="Dalton";
+    // id: Number =31;
+    name: string ="";
+    category: String="";
+    description: string="";
+    NomConsommateur: string="";
     imageUrl: string='';
-    quantity: Number=10;
+    quantity: Number=0;
     date: Date= new Date();
-    etat: Boolean =true;
-    pseudo:string ="AE-TR7";
-    modif:Boolean=true;
+    etat?: Boolean =true;
+    pseudo:string ="";
+    modif?:Boolean=true;
 }

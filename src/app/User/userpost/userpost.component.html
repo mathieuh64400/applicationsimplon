@@ -1,7 +1,59 @@
 <app-navbar></app-navbar>
 <h2>Profil utilisateur</h2>
 <div *ngIf="msg"> Contact creer avec success</div>
-<div class="cadre" style="margin-left:15%;">
+<section class="cadre"style="margin-left:15%;">
+    <form #cForm="ngForm" (ngSubmit)=" creationEtat(cForm)"style="margin-left: 15%;margin-right:15%;">
+        <div class="grix xs1 sm2">
+            <div class="form-field">
+                <label for="nom"> Entrez votre nom</label>
+                <input name="nom" type="text" required [(ngModel)]="serv.usersi.Nom" #cNom="ngModel">
+            </div>
+            <div class="form-field">
+                <label for="nom"> Entrez votre Prenom:</label>
+                <input name="Prenom" type="text" required [(ngModel)]="serv.usersi.Prenom" #cPrenom="ngModel">
+            </div>
+        </div>
+        <div class="grix xs1 sm2">
+            <div class="form-field">
+                <label for="preference"> Entrez vos produits préférés:</label>
+                <input name="Preference" type="text" required [(ngModel)]="serv.usersi.preference"
+                    #cPreference="ngModel">
+            </div>
+        </div>
+            <div class="grix xs1 sm2">
+                <div class="form-field">
+                    <label for="preference"> Entrez vos produits préférés:</label>
+                    <input name="Promotion" type="date" [(ngModel)]="serv.usersi.promotion" #cPromotion="ngModel">
+                </div>
+                <div class="form-field">
+                    <label for="mail"> Entrez votre mail:</label>
+                    <input name="Email" type="mail" [(ngModel)]="serv.usersi.email" #cEmail="ngModel">
+                </div>
+            </div>
+            <div class="grix xs1 sm2">
+                <div class="form-field">
+                    <label for="image">entez le code de votre image</label>
+                    <input name="Img" type="text" [(ngModel)]="serv.usersi.img" #cImg="ngModel"></div>
+                <div class="form-field">
+                    <label for="motdepasse">entrez votre mot de passe</label>
+                    <input name="motdepass" [(ngModel)]="serv.usersi.motdepass" #cMotdepass="ngModel">
+                </div>
+            </div>
+            <div class="grix xs1 sm2">
+                <div class="form-field">
+                    <label for="leiu">Ajoutez votre lieu d'étude</label>
+                    <input name="lieu" [(ngModel)]="serv.usersi.lieu" #cLieu="ngModel">
+                </div> 
+            </div>
+            <div>
+                    <!-- <button (click)="contactServ.envoieContact()" [disabled]="cForm.invalid">SE CONNECTER</button> -->
+                    <button [disabled]="cForm.invalid">Ajouter</button>
+                    <!-- <button type="reset">ANNULER</button> -->
+            </div>
+           
+    </form>
+</section>
+<!-- <div class="cadre" >
     <form style="margin-left: 15%;margin-right:15%;"adduserform="#ngForm">
         <div class="grix xs1 sm2">
             <div class="form-field ">
@@ -56,5 +108,9 @@
         <button  type="submit" class="btn large shadow-1 black dark-2 press" style="margin-bottom: 5%;">
             validation</button>
     </a>
-</div>
+</div> -->
+
+
+
+
 <app-footer></app-footer>
